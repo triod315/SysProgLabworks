@@ -1,0 +1,73 @@
+Multiple PCI Devices
+
+If you have multiple devices installed which are supported by the same programmer you have to tell flashrom which one you want to access. To do so you need to specify the PCI address as a parameter. You can find the PCI address with lspci -nn.
+
+[user@machine ~]# lspci -nn
+...
+00:0d.0 Ethernet controller [0200]: 3Com Corporation 3c900B-TPO Etherlink XL [Cyclone] [10b7:9004] (rev 04)
+^^^^^^^\
+        \_ this is the PCI bus:device.fn address
+00:0e.0 Ethernet controller [0200]: 3Com Corporation 3c905B 100BaseTX [Cyclone] [10b7:9055] (rev 24)
+...
+
+Probing Test
+
+Let's assume that you have two 3Com cards and want to programmer the first one above which is handled by flashrom's nic3com programmer. To see if flashrom detects the flash chip of the card just run the following command (as root or with sudo):
+
+[user@machine ~]# flashrom -p nic3com:pci=00:0d.0
+flashrom v0.9.7-r1710 on Linux 2.6.32-5-686 (i686)
+flashrom is free software, get the source code at http://www.flashrom.org
+
+Calibrating delay loop... OK.
+Found Winbond flash chip "W29C010(M)/W29C011A/W29EE011/W29EE012" (128 kB, Parallel) on nic3com.
+
+If it does not find a chip then make sure it is seated correctly first. If that does not help check if the flash chip is marked as supported by flashrom in its wiki (NB: this list is updated regularly and might not reflect the status of your version of flashrom if it is too old).
+Creating a Backup
+
+If flashrom detects your chip you should first make a backup of the existing data by reading it to a file:
+
+[user@machine ~]# flashrom -p nic3com:pci=00:0d.0 -r backup.rom
+
+flashrom v0.9.7-r1710 on Linux 2.6.32-5-686 (i686)
+flashrom is free software, get the source code at http://www.flashrom.org
+
+Calibrating delay loop... OK.
+Found Winbond flash chip "W29C010(M)/W29C011A/W29EE011/W29EE012" (128 kB, Parallel) on nic3com.
+Reading flash... done.
+
+If you expect some valid data in it (e.g. the vendor option rom) you should inspect the file in a hex viewer to make sure flashrom works. An empty chip looks like this:
+
+[user@machine ~]# hd empty.rom 
+00000000  ff ff ff ff ff ff ff ff  ff ff ff ff ff ff ff ff  |................|
+*
+00020000
+
+Writing
+Preparing the Image
+
+flashrom requires that you feed it files of the same size as the flash chip to be written. Because iPXE does not produce such aligned files you need to pad them by appending data to it (all ones is best because that equals empty space and speeds up flashing). Lets say your ipxe.rom is 67584 bytes and you have a 128 kB/1 Mb flash chip, then you have to append
+
+131072 - 67584 = 63488
+
+bytes. The following line of shell script does exactly that.
+
+[user@machine ~]# tr '\0' '\377' < /dev/zero | dd bs=1 count=63488 of=ipxe.rom conv=notrunc seek=67584
+63488+0 records in
+63488+0 records out
+63488 bytes (63 kB) copied, 0,0920346 s, 690 kB/s
+
+Flashing
+
+After the image is prepared it can be written with flashrom:
+
+flashrom -p nic3com:pci=00:0d.0 -w ipxe.rom
+flashrom v0.9.7-r1710 on Linux 2.6.32-5-686 (i686)
+flashrom is free software, get the source code at http://www.flashrom.org
+
+Calibrating delay loop... OK.
+Found Winbond flash chip "W29C010(M)/W29C011A/W29EE011/W29EE012" (128 kB, Parallel) on nic3com.
+Reading old flash chip contents... done.
+Erasing and writing flash chip... Erase/write done.
+Verifying flash... VERIFIED.
+
+Some chips (especially older ones) are worn out already and/or have some timing problems. If flashrom gives up by itself and reports an error, just retry once or twice before giving up. If flashrom reports VERIFIED at the end everything should be fine.

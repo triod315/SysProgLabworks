@@ -1,0 +1,21 @@
+#/usr/bin/bash
+gcc -c F1.c
+gcc -c F2.c
+gcc -c F3.c
+gcc -c F4.c
+
+ar cr libf1.a F1.o
+ar cr libf2.a F2.o
+ar cr libf3.a F3.o
+ar cr libf4.a F4.o
+
+gcc -c main.c
+gcc -o execute main.o -L. -lf4 -lf3 -lf2 -lf1
+
+rm -f *.o
+rm -f *.*~
+
+
+
+
+ 

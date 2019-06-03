@@ -1,0 +1,157 @@
+Key 'wahaha' DOESN'T EXIST :(
+<built-in method date of datetime.datetime object at 0x0000027CD3F31800>
+	Key 'wahaha' DOESN'T EXIST :(
+<built-in method date of datetime.datetime object at 0x0000015121061800>
+	Key 'wahaha' DOESN'T EXIST :(
+2019-04-03 21:51:40.115451
+	Key 'wahaha' DOESN'T EXIST :(
+2019-04-03 21:53:17.737869
+	Key 'wahaha' DOESN'T EXIST :(
+2019-04-03 21:53:47.085512
+	Key 'wahaha' DOESN'T EXIST :(
+2019-04-03 21:53:56.371834
+	Key 'wahaha' DOESN'T EXIST :(
+2019-04-03 21:54:13.556719
+	
+  
+2019-04-03 21:58:14.440364
+	Key 'wahaha' DOESN'T EXIST :(
+2019-04-03 21:58:14.507741
+	<response>
+  <description>Key 'wahaha' DOESN'T EXIST :(</description>
+  <code>404</code>
+</response>
+2019-04-03 21:58:32.466117
+	Key 'wahaha' DOESN'T EXIST :(
+2019-04-03 21:58:32.524267
+	<response>
+  <description>Key 'wahaha' DOESN'T EXIST :(</description>
+  <code>404</code>
+</response>
+2019-04-03 21:59:01.036953
+	Key 'wahaha' DOESN'T EXIST :(
+2019-04-03 21:59:01.051492
+	
+2019-04-03 21:59:19.092708
+	<response>
+  <description>Key 'wahaha' DOESN'T EXIST :(</description>
+  <code>404</code>
+</response>
+2019-04-03 21:59:19.117273
+	Key 'wahaha' DOESN'T EXIST :(
+2019-04-03 21:59:27.447474<response>
+  <description>Key 'wahaha' DOESN'T EXIST :(</description>
+  <code>404</code>
+</response>
+2019-04-03 21:59:27.496604Key 'wahaha' DOESN'T EXIST :(
+2019-04-03 21:59:47.285163
+<response>
+  <description>Key 'wahaha' DOESN'T EXIST :(</description>
+  <code>404</code>
+</response>
+2019-04-03 21:59:47.313734
+Key 'wahaha' DOESN'T EXIST :(
+2019-04-03 22:01:20.087117
+<response>
+  <description>Key 'wahaha' DOESN'T EXIST :(</description>
+  <code>404</code>
+</response>
+2019-04-03 22:01:20.107672
+response
+2019-04-03 22:01:28.875501
+<response>
+  <description>Key 'wahaha' DOESN'T EXIST :(</description>
+  <code>404</code>
+</response>
+2019-04-03 22:01:28.914605
+response
+2019-04-03 22:01:46.407061
+<response>
+  <description>Key 'wahaha' DOESN'T EXIST :(</description>
+  <code>404</code>
+</response>
+2019-04-03 22:01:46.434133
+response
+2019-04-03 22:01:52.874530
+<response>
+  <description>Key 'wahaha' DOESN'T EXIST :(</description>
+  <code>404</code>
+</response>
+2019-04-03 22:01:52.907618
+response
+2019-04-03 22:02:19.229765
+<response>
+  <description>Key 'wahaha' DOESN'T EXIST :(</description>
+  <code>404</code>
+</response>
+2019-04-03 22:02:29.652621
+<response>
+  <description>Key 'wahaha' DOESN'T EXIST :(</description>
+  <code>404</code>
+</response>
+2019-04-03 22:02:55.051545
+<response>
+  <description>Key 'wahaha' DOESN'T EXIST :(</description>
+  <code>404</code>
+</response>
+2019-04-03 22:02:55.099198
+
+  
+2019-04-03 22:03:12.379227
+<response>
+  <description>Key 'wahaha' DOESN'T EXIST :(</description>
+  <code>404</code>
+</response>
+2019-04-03 22:03:12.408801
+description
+2019-04-03 22:03:24.988780
+<response>
+  <description>Key 'wahaha' DOESN'T EXIST :(</description>
+  <code>404</code>
+</response>
+2019-04-03 22:03:25.016854
+Key 'wahaha' DOESN'T EXIST :(
+2019-04-03 22:03:44.550318
+Key 'wahaha' DOESN'T EXIST :(
+2019-04-03 22:33:36.743246
+Key 'SOFTWARE/Task_Queue' DOESN'T EXIST :(
+2019-04-03 22:33:36.784858
+key "SOFTWARE/Task_Queue" doesnt exist
+2019-04-03 22:34:35.145185
+Key 'newkey' DOESN'T EXIST :(
+2019-04-03 22:34:39.455603
+Key 'newkey' DOESN'T EXIST :(
+2019-04-03 22:38:26.323038
+Key 'newsubkey' DOESN'T EXIST :(
+2019-04-03 22:38:27.917115
+Key 'newsubkey' WAS CREATED
+2019-04-03 22:38:27.935673
+key "SOFTWARE\Task_Queue\/newsubkey was created"
+2019-04-03 22:38:42.159001
+Key 'newsubkey' EXIST
+2019-04-03 22:38:42.167524
+key "newsubkey" doesnt exist
+2019-04-03 23:08:55.602496
+Key 'geheth' DOESN'T EXIST :(
+2019-04-03 23:08:55.616032
+key "geheth" doesnt exist
+2019-04-03 23:13:48.058857
+Key 'create' DOESN'T EXIST :(
+2019-04-03 23:13:48.070890
+key "create" doesnt exist
+2019-04-03 23:14:04.126037
+Key 'y' DOESN'T EXIST :(
+2019-04-03 23:14:04.137567
+key "y" doesnt exist
+2019-04-03 23:34:19.644637
+Key 'wgrwggwrg' DOESN'T EXIST :(
+2019-04-03 23:34:19.654162
+key "wgrwggwrg" doesnt exist
+2019-04-03 23:43:17.969866
+gwrgwgr
+2019-04-03 23:43:26.361849
+gwrgwrgh
+2019-04-03 23:47:35.650731
+Key 'cefeg' DOESN'T EXIST :(
+2019-04-03 23:47:35.660757
+key "cefeg" doesnt exist

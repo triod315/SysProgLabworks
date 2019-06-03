@@ -1,0 +1,51 @@
+Multiple PCI Devices
+
+
+[user@machine ~]# lspci -nn
+...
+00:0d.0 Ethernet controller [0200]: 3Com Corporation 3c900B-TPO Etherlink XL [Cyclone] [10b7:9004] (rev 04)
+^^^^^^^\
+        \_ this is the PCI bus:device.fn address
+00:0e.0 Ethernet controller [0200]: 3Com Corporation 3c905B 100BaseTX [Cyclone] [10b7:9055] (rev 24)
+...
+
+Probing Test
+
+
+
+Calibrating delay loop... OK.
+
+Creating a Backup
+
+
+
+
+Calibrating delay loop... OK.
+Reading flash... done.
+
+
+[user@machine ~]# hd empty.rom 
+00000000  ff ff ff ff ff ff ff ff  ff ff ff ff ff ff ff ff  |................|
+*
+00020000
+
+Writing
+Preparing the Image
+
+
+131072 - 67584 = 63488
+
+bytes. The following line of shell script does exactly that.
+
+[user@machine ~]# tr '\0' '\377' < /dev/zero | dd bs=1 count=63488 of=ipxe.rom conv=notrunc seek=67584
+63488+0 records in
+63488+0 records out
+63488 bytes (63 kB) copied, 0,0920346 s, 690 kB/s
+
+Flashing
+
+
+
+Calibrating delay loop... OK.
+Verifying flash... VERIFIED.
+

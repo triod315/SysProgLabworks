@@ -1,0 +1,16 @@
+[Unit]
+Description=SiteWatcherDaemon
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/home/user/lab6
+User=root
+Group=root
+OOMScoreAdjust=-100
+ExecStart=/home/user/lab6/daemon-watcher.py
+Restart=always
+RestartSec=60
+
+[Install]
+WantedBy=default.target

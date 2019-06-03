@@ -1,0 +1,16 @@
+[Unit]
+Description=TelegramSiteWatcherDaemon
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/home/user/lab6/tdaemon
+User=root
+Group=root
+OOMScoreAdjust=-100
+ExecStart=/home/user/lab6/tdaemon/tdaemon-watcher.py
+Restart=always
+RestartSec=60
+
+[Install]
+WantedBy=default.target

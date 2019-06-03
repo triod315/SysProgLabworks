@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap12enc="http://www.w3.org/2003/05/soap-encoding" xmlns:soap11enc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:plink="http://schemas.xmlsoap.org/ws/2003/05/partner-link/" xmlns:tns="tns" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:wsa="http://schemas.xmlsoap.org/ws/2003/03/addressing" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xop="http://www.w3.org/2004/08/xop/include" xmlns:soap12env="http://www.w3.org/2003/05/soap-envelope" xmlns:soap11env="http://schemas.xmlsoap.org/soap/envelope/" name="SomeSoapService" targetNamespace="tns" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xs:schema elementFormDefault="qualified" targetNamespace="tns">
+      <xs:complexType name="SendEmail">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="subject" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="SendEmailResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="SendEmailResult" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="addLogin">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="login" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="addLoginResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="addLoginResult" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="checkFile">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="url" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="checkFileResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="checkFileResult" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="isLoginFree">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="login" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="isLoginFreeResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="isLoginFreeResult" nillable="true" type="xs:boolean" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="SendEmail" type="tns:SendEmail" />
+      <xs:element name="SendEmailResponse" type="tns:SendEmailResponse" />
+      <xs:element name="addLogin" type="tns:addLogin" />
+      <xs:element name="addLoginResponse" type="tns:addLoginResponse" />
+      <xs:element name="checkFile" type="tns:checkFile" />
+      <xs:element name="checkFileResponse" type="tns:checkFileResponse" />
+      <xs:element name="isLoginFree" type="tns:isLoginFree" />
+      <xs:element name="isLoginFreeResponse" type="tns:isLoginFreeResponse" />
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="addLogin">
+    <wsdl:part name="addLogin" element="tns:addLogin" />
+  </wsdl:message>
+  <wsdl:message name="addLoginResponse">
+    <wsdl:part name="addLoginResponse" element="tns:addLoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="isLoginFree">
+    <wsdl:part name="isLoginFree" element="tns:isLoginFree" />
+  </wsdl:message>
+  <wsdl:message name="isLoginFreeResponse">
+    <wsdl:part name="isLoginFreeResponse" element="tns:isLoginFreeResponse" />
+  </wsdl:message>
+  <wsdl:message name="checkFile">
+    <wsdl:part name="checkFile" element="tns:checkFile" />
+  </wsdl:message>
+  <wsdl:message name="checkFileResponse">
+    <wsdl:part name="checkFileResponse" element="tns:checkFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="SendEmail">
+    <wsdl:part name="SendEmail" element="tns:SendEmail" />
+  </wsdl:message>
+  <wsdl:message name="SendEmailResponse">
+    <wsdl:part name="SendEmailResponse" element="tns:SendEmailResponse" />
+  </wsdl:message>
+  <wsdl:portType name="SomeSoapService">
+    <wsdl:operation name="addLogin" parameterOrder="addLogin">
+      <wsdl:input name="addLogin" message="tns:addLogin" />
+      <wsdl:output name="addLoginResponse" message="tns:addLoginResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="isLoginFree" parameterOrder="isLoginFree">
+      <wsdl:input name="isLoginFree" message="tns:isLoginFree" />
+      <wsdl:output name="isLoginFreeResponse" message="tns:isLoginFreeResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="checkFile" parameterOrder="checkFile">
+      <wsdl:input name="checkFile" message="tns:checkFile" />
+      <wsdl:output name="checkFileResponse" message="tns:checkFileResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="SendEmail" parameterOrder="SendEmail">
+      <wsdl:input name="SendEmail" message="tns:SendEmail" />
+      <wsdl:output name="SendEmailResponse" message="tns:SendEmailResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SomeSoapService" type="tns:SomeSoapService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="addLogin">
+      <soap:operation soapAction="addLogin" style="document" />
+      <wsdl:input name="addLogin">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="addLoginResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="isLoginFree">
+      <soap:operation soapAction="isLoginFree" style="document" />
+      <wsdl:input name="isLoginFree">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="isLoginFreeResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="checkFile">
+      <soap:operation soapAction="checkFile" style="document" />
+      <wsdl:input name="checkFile">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="checkFileResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendEmail">
+      <soap:operation soapAction="SendEmail" style="document" />
+      <wsdl:input name="SendEmail">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SendEmailResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SomeSoapService">
+    <wsdl:port name="SomeSoapService" binding="tns:SomeSoapService">
+      <soap:address location="http://192.168.159.129:5002/soap/someservice" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

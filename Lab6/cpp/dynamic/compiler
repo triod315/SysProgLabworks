@@ -1,0 +1,21 @@
+#!/usr/bin/bash
+gcc -c main.c
+gcc -c -fPIC F1.c
+gcc -c -fPIC F2.c
+gcc -c -fPIC F3.c
+gcc -c -fPIC F4.c
+
+gcc -shared -o libdf1.so F1.o
+gcc -shared -o libdf2.so F2.o
+gcc -shared -o libdf3.so F3.o
+gcc -shared -o libdf4.so F4.o
+
+gcc -o execute main.o -L. -ldf4 -ldf3 -ldf2 -ldf1 -Wl,-rpath,./
+
+rm -f *.o
+rm -f *.*~
+
+
+
+
+ 
